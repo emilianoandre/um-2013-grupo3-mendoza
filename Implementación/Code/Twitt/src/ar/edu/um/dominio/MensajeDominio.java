@@ -168,20 +168,5 @@ public class MensajeDominio {
 		return mensajes;
 	}
     
-    /**
-     * buscarMensajePorLink: Busca mensajes en la DB relacionados a un link
-     * 
-     * @param String
-     *            - Link a buscar
-     *            
-     * @return List<Mensaje>
-     * 			  - Lista de Mensajes
-     */
-    public List<Mensaje> buscarMensajePorLink(String link){
-		ArrayList<Mensaje> mensajes = null;
-		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
-		
-		return mensajes;
-	}
 
 }

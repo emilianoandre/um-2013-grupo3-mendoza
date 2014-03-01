@@ -42,7 +42,7 @@
     </class>
     
     <query name="Mensaje.mostrarMensajesTablon">
-		<![CDATA[Select m from Mensaje m  left join m.usuariosMencionadosMensajes u where m.usuario.idusuario = :idUsuario or u.idusuario = :idUsuario]]>
+		<![CDATA[Select m from Mensaje m  left join m.usuariosMencionados u where m.usuario.idusuario = :idUsuario or u.idusuario = :idUsuario]]>
 	</query>
 	
 	<query name="Mensaje.visualizarMenciones">

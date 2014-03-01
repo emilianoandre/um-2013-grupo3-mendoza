@@ -32,8 +32,8 @@ public class Mensaje implements java.io.Serializable {
 	private Usuario usuarioDestinatario;
 	private Date fechaPublicacion;
 	private String mensaje;
-	private Set<Tema> temaMensajes;
-	private Set<Usuario> usuariosMencionadosMensajes;
+	private Set<Tema> temas;
+	private Set<Usuario> usuariosMencionados;
 
 	public Mensaje() {
 	}
@@ -59,8 +59,8 @@ public class Mensaje implements java.io.Serializable {
 		this.usuarioDestinatario = usuarioDestinatario;
 		this.fechaPublicacion = fechaPublicacion;
 		this.mensaje = mensaje;
-		this.temaMensajes = temaMensajes;
-		this.usuariosMencionadosMensajes = usuariosMencionadosMensajes;
+		this.temas = temaMensajes;
+		this.usuariosMencionados = usuariosMencionadosMensajes;
 	}
 
 	@Id
@@ -124,21 +124,21 @@ public class Mensaje implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "mensaje")
-	public Set<Tema> getTemaMensajes() {
-		return this.temaMensajes;
+	public Set<Tema> getTemas() {
+		return this.temas;
 	}
 
-	public void setTemaMensajes(Set<Tema> temaMensajes) {
-		this.temaMensajes = temaMensajes;
+	public void setTemas(Set<Tema> temaMensajes) {
+		this.temas = temaMensajes;
 	}
 
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "mensaje")
-	public Set<Usuario> getUsuariosMencionadosMensajes() {
-		return this.usuariosMencionadosMensajes;
+	public Set<Usuario> getUsuariosMencionados() {
+		return this.usuariosMencionados;
 	}
 
-	public void setUsuariosMencionadosMensajes(Set<Usuario> usuariosMencionadosMensajes) {
-		this.usuariosMencionadosMensajes = usuariosMencionadosMensajes;
+	public void setUsuariosMencionados(Set<Usuario> usuariosMencionadosMensajes) {
+		this.usuariosMencionados = usuariosMencionadosMensajes;
 	}
 
 }
