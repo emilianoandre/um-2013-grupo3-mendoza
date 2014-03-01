@@ -31,7 +31,7 @@ public class UsuarioDominio {
      */
 	public void crearUsuario(Usuario usuario){
 		UsuarioDao usuarioDao = new UsuarioDao(PersistenceUtil.getEntityManager());
-		usuarioDao.persist(usuario);
+		usuarioDao.insertar(usuario);
 	}
 	
     /**
@@ -46,7 +46,7 @@ public class UsuarioDominio {
 	public Usuario verUsuario(Integer id){
 		Usuario usuario = null;
 		UsuarioDao usuarioDao = new UsuarioDao(PersistenceUtil.getEntityManager());
-		usuarioDao.findById(id);
+		usuarioDao.encontrarPorID(id);
 		return usuario;
 	}
 	
@@ -59,7 +59,7 @@ public class UsuarioDominio {
      */
 	public void modificarUsuario(Usuario usuario){
 		UsuarioDao usuarioDao = new UsuarioDao(PersistenceUtil.getEntityManager());
-		usuarioDao.merge(usuario);		
+		usuarioDao.actualizar(usuario);		
 	}
 	
 	/**
@@ -71,7 +71,7 @@ public class UsuarioDominio {
      */	
 	public void eliminarUsuario (Usuario usuario){
 		UsuarioDao usuarioDao = new UsuarioDao(PersistenceUtil.getEntityManager());
-		usuarioDao.remove(usuario);
+		usuarioDao.eliminar(usuario);
 	}
 	
     /**
@@ -85,7 +85,7 @@ public class UsuarioDominio {
      */
 	public Set<Usuario> consultarSeguidores(Usuario usuario){
 		UsuarioDao usuarioDao = new UsuarioDao(PersistenceUtil.getEntityManager());
-		usuarioDao.findById(usuario.getIdusuario());
+		usuarioDao.encontrarPorID(usuario.getIdusuario());
 		
 		return usuario.getUsuariosSeguidores();
 	}
@@ -101,7 +101,7 @@ public class UsuarioDominio {
      */
 	public Set<Usuario> consultarSeguidos(Usuario usuario){		
 		UsuarioDao usuarioDao = new UsuarioDao(PersistenceUtil.getEntityManager());
-		usuarioDao.findById(usuario.getIdusuario());
+		usuarioDao.encontrarPorID(usuario.getIdusuario());
 		
 		return usuario.getUsuariosSeguidos();
 	}
@@ -136,7 +136,7 @@ public class UsuarioDominio {
 		
 		usuarioActual.getUsuariosSeguidos().add(usuarioDejarDeSeguir);
 		
-		usuarioDao.merge(usuarioActual);
+		usuarioDao.actualizar(usuarioActual);
 	}
 	
 	/**
@@ -153,7 +153,7 @@ public class UsuarioDominio {
 		
 		usuarioActual.getUsuariosSeguidos().remove(usuarioDejarDeSeguir);
 		
-		usuarioDao.merge(usuarioActual);
+		usuarioDao.actualizar(usuarioActual);
 	}
 
 	/**

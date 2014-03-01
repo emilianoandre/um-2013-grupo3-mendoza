@@ -28,7 +28,7 @@ public class UsuarioDao extends DaoBase{
 		this.entityManager = em;
 	}
 
-	public void persist(Usuario transientInstance) {
+	public void insertar(Usuario transientInstance) {
 		log.debug("persisting Usuario instance");
 		try {
 			entityManager.getTransaction().begin();
@@ -41,7 +41,7 @@ public class UsuarioDao extends DaoBase{
 		}
 	}
 
-	public void remove(Usuario persistentInstance) {
+	public void eliminar(Usuario persistentInstance) {
 		log.debug("removing Usuario instance");
 		try {
 			entityManager.getTransaction().begin();
@@ -54,7 +54,7 @@ public class UsuarioDao extends DaoBase{
 		}
 	}
 
-	public Usuario merge(Usuario detachedInstance) {
+	public Usuario actualizar(Usuario detachedInstance) {
 		log.debug("merging Usuario instance");
 		try {
 			entityManager.getTransaction().begin();
@@ -68,7 +68,7 @@ public class UsuarioDao extends DaoBase{
 		}
 	}
 
-	public Usuario findById(int id) {
+	public Usuario encontrarPorID(int id) {
 		log.debug("getting Usuario instance with id: " + id);
 		try {
 			Usuario instance = entityManager.find(Usuario.class, id);

@@ -33,7 +33,7 @@ public class MensajeDominio {
      */
 	public void publicarMensaje(Mensaje mensaje){
 		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
-		mensajeDao.persist(mensaje);
+		mensajeDao.insertar(mensaje);
 	}
 	
     /**
@@ -47,7 +47,7 @@ public class MensajeDominio {
      */
 	public void republicarMensaje(Mensaje mensaje, Usuario usuarioRepublicante){
 		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
-		mensajeDao.persist(mensaje);
+		mensajeDao.insertar(mensaje);
 	}
 	
     /**
@@ -59,7 +59,7 @@ public class MensajeDominio {
      */
 	public void modificarMensaje (Mensaje mensaje){
 		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
-		mensajeDao.merge(mensaje);
+		mensajeDao.actualizar(mensaje);
 	}
 	
     /**
@@ -71,7 +71,7 @@ public class MensajeDominio {
      */
 	public void eliminarMensaje(Mensaje mensaje){
 		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
-		mensajeDao.remove(mensaje);
+		mensajeDao.eliminar(mensaje);
 	}
 	
     /**
@@ -133,7 +133,7 @@ public class MensajeDominio {
      */
 	public void enviarMensajePrivado(Mensaje mensaje){
 		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
-		mensajeDao.persist(mensaje);
+		mensajeDao.insertar(mensaje);
 	}
 	
     /**

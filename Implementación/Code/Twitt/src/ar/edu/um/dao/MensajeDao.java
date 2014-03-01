@@ -28,7 +28,7 @@ public class MensajeDao extends DaoBase{
 		this.entityManager = em;
 	}
 
-	public void persist(Mensaje transientInstance) {
+	public void insertar(Mensaje transientInstance) {
 		log.debug("persisting Mensaje instance");
 		try {
 			entityManager.getTransaction().begin();
@@ -41,7 +41,7 @@ public class MensajeDao extends DaoBase{
 		}
 	}
 
-	public void remove(Mensaje persistentInstance) {
+	public void eliminar(Mensaje persistentInstance) {
 		log.debug("removing Mensaje instance");
 		try {
 			entityManager.getTransaction().begin();
@@ -54,7 +54,7 @@ public class MensajeDao extends DaoBase{
 		}
 	}
 
-	public Mensaje merge(Mensaje detachedInstance) {
+	public Mensaje actualizar(Mensaje detachedInstance) {
 		log.debug("merging Mensaje instance");
 		try {
 			entityManager.getTransaction().begin();
@@ -68,7 +68,7 @@ public class MensajeDao extends DaoBase{
 		}
 	}
 
-	public Mensaje findById(int id) {
+	public Mensaje encontrarPorID(int id) {
 		log.debug("getting Mensaje instance with id: " + id);
 		try {
 			Mensaje instance = entityManager.find(Mensaje.class, id);

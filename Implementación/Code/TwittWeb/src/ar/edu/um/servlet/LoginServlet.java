@@ -38,20 +38,15 @@ public class LoginServlet extends HttpServlet {
         
      
     public void init() throws ServletException {
-        //we can create DB connection resource here and set it to Servlet context
-        if(getServletContext().getInitParameter("dbURL").equals("jdbc:mysql://localhost/mysql_db") &&
-                getServletContext().getInitParameter("dbUser").equals("mysql_user") &&
-                getServletContext().getInitParameter("dbUserPwd").equals("mysql_pwd"))
-        getServletContext().setAttribute("DB_Success", "True");
-        else throw new ServletException("DB Connection error");
+
     }
  
      
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
  
         //get request parameters for userID and password
-        String user = request.getParameter("user");
-        String pwd = request.getParameter("pwd");
+        String user = request.getParameter("usuario");
+        String pwd = request.getParameter("clave");
          
         log("User="+user+"::password="+pwd);
         UsuarioDominio usuDominio = new UsuarioDominio();
@@ -69,7 +64,7 @@ public class LoginServlet extends HttpServlet {
         }else{
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.html");
             PrintWriter out= response.getWriter();
-            out.println("<font color=red>Either user name or password is wrong.</font>");
+            out.println("<font color=red>Usuario o Clave incorrectos</font>");
             rd.include(request, response);             
         }
          
