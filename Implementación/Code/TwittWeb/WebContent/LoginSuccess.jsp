@@ -15,6 +15,12 @@
 	<p style="text-align: right;">
 		<input name="publicar" type="button" value="Publicar" />
 	</p>
+	<p>
+		<textarea cols="100" name="usuario" rows="1"></textarea>
+	</p>
+	<p style="text-align: right;">
+		<input name="buscarUsuario" type="button" value="Buscar Usuario" />
+	</p>
 	<c:forEach var="mensaje" items='${mensajes}'>
 		<p>
 			${mensaje.usuario.nombreUsuario}
