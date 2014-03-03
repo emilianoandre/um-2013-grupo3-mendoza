@@ -3,7 +3,7 @@ package ar.edu.um.dao;
 // Generated Feb 2, 2014 7:21:27 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.ArrayList;
-
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import org.apache.commons.logging.Log;
@@ -91,8 +91,14 @@ public class MensajeDao extends DaoBase{
 	 */
 	public ArrayList<Mensaje> buscarMensajesTablon(Usuario usuario){
 		ArrayList<Mensaje> mensajesTablon = null;
+		List<Integer> idsUsuarios= new ArrayList<Integer>();
+		idsUsuarios.add(usuario.getIdusuario());
+		for(int i=0; i<usuario.getUsuariosSeguidos().size(); i++)
+			idsUsuarios.add(((Usuario)usuario.getUsuariosSeguidos().toArray()[0]).getIdusuario());
+		
 		mensajesTablon = (ArrayList<Mensaje>) getEntityManager().createNamedQuery("Mensaje.mostrarMensajesTablon").
-				setParameter("idUsuario",usuario.getIdusuario()).getResultList();
+				setParameter("usuarios",idsUsuarios).setParameter("idUsuario",usuario.getIdusuario()).
+				getResultList();
 		return mensajesTablon;
 	}
 	

@@ -14,7 +14,7 @@
     </class>
     
     <query name="Tema.mostrarTemasDelMomento">
-		<![CDATA[Select t from Tema t order by t.idTema limit 10]]>
+		<![CDATA[Select t from Tema t where idTema < 10 order by t.idTema ]]>
 	</query>
     
     <query name="Tema.buscarTemaPorFechas">

@@ -155,16 +155,6 @@ public class UsuarioDominio {
 		
 		usuarioDao.actualizar(usuarioActual);
 	}
-
-	/**
-     * cerrarSesion: Saca un usuario de la lista de sesiones activas
-     * 
-     * @param Usuario
-     *            - Usuario que realizó la acción
-     */	
-	public void cerrarSesion(Usuario usuario){
-		
-	}
 	
 	/**
      * iniciarSesion: Loguea un usuario en el sistema

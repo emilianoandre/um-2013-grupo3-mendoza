@@ -113,7 +113,7 @@ public class UsuarioDao extends DaoBase{
 	public List<Usuario> buscarUsuariosPorNombre(String nombreUsuario){
 		List<Usuario> usuario = null;
 		try{
-			usuario = entityManager.createNamedQuery("Usuario.loguearUsuario")
+			usuario = entityManager.createNamedQuery("Usuario.buscarUsuarioPorNombre")
 					.setParameter("nombreUsuario", nombreUsuario)
 					.getResultList();				
 		}catch(NoResultException nrEx){

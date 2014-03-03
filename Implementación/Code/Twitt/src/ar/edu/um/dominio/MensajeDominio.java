@@ -83,11 +83,9 @@ public class MensajeDominio {
      * @return List<Mensaje>
      * 			  - Lista de Mensajes
      */
-	public ArrayList<Mensaje> visualizarTablon(int idUsuario){
+	public ArrayList<Mensaje> visualizarTablon(Usuario usuario){
 		ArrayList<Mensaje> mensajes = null;
 		MensajeDao mensajeDao = new MensajeDao(PersistenceUtil.getEntityManager());
-		Usuario usuario = new Usuario();
-		usuario.setIdusuario(idUsuario);
 		mensajes = mensajeDao.buscarMensajesTablon(usuario);		
 		return mensajes;
 	}
