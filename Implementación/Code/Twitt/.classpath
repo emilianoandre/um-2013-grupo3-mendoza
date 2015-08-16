@@ -18,6 +18,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.jboss.ide.eclipse.as.classpath.core.javaee-5.0"/>
-	<classpathentry kind="lib" path="lib/jersey-server.jar"/>
+	<classpathentry kind="lib" path="lib/jersey-server-1.19.jar"/>
+	<classpathentry kind="lib" path="lib/javaee-api-5.0-1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

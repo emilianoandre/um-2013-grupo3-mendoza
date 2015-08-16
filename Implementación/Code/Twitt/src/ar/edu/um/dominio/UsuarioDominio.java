@@ -10,6 +10,8 @@ package ar.edu.um.dominio;
 import java.util.List;
 import java.util.Set;
 
+import javax.jws.WebService;
+
 import ar.edu.um.dao.UsuarioDao;
 import ar.edu.um.entidad.Usuario;
 import ar.edu.um.util.PersistenceUtil;
@@ -20,6 +22,7 @@ import ar.edu.um.util.PersistenceUtil;
  * $Id: $
  * 
  */
+@WebService
 public class UsuarioDominio {
 	
     /**

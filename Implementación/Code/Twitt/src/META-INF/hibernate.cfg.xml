@@ -7,7 +7,9 @@
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost/</property>
         <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">mysqlserver123</property>
         <property name="hibernate.default_schema">canario</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto" value="update"/>
     </session-factory>
 </hibernate-configuration>

@@ -10,6 +10,8 @@ package ar.edu.um.dominio;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jws.WebService;
+
 import ar.edu.um.dao.MensajeDao;
 import ar.edu.um.entidad.Mensaje;
 import ar.edu.um.entidad.Tema;
@@ -22,6 +24,7 @@ import ar.edu.um.util.PersistenceUtil;
  * $Id: $
  * 
  */
+@WebService
 public class MensajeDominio {
 	
     /**

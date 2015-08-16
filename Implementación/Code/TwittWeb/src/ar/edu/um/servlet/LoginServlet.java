@@ -55,7 +55,7 @@ public class LoginServlet extends HttpServlet {
         if(usuario != null){
 
             MensajeDominio mensajeDominio = new MensajeDominio();
-            List<Mensaje> mensajes = mensajeDominio.visualizarTablon(usuario.getIdusuario());
+            List<Mensaje> mensajes = mensajeDominio.visualizarTablon(usuario);
             	
             RequestDispatcher rd = getServletContext().getRequestDispatcher("/LoginSuccess.jsp");
             request.setAttribute("usuario", usuario);
